@@ -532,7 +532,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: -8297692253644956284, guid: fb99ad57b5d4bdf499a7fb76cd37253a, type: 3}
       propertyPath: m_Mass
       value: 2
@@ -541,6 +544,9 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     - target: {fileID: -4100973849141867801, guid: fb99ad57b5d4bdf499a7fb76cd37253a, type: 3}
       propertyPath: m_InteractionManager
