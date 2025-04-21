@@ -880,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 488912, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.75
+      value: -8.66
       objectReference: {fileID: 0}
     - target: {fileID: 488912, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1392,24 +1392,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnablePrefabs:
   - {fileID: 127356, guid: fb99ad57b5d4bdf499a7fb76cd37253a, type: 3}
-  - {fileID: 127356, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
   - {fileID: 145594, guid: f074bce9c769d854bb6cf154edf157de, type: 3}
   - {fileID: 106350, guid: 9a3cd3c4b8a191e45b33d65a17724c16, type: 3}
   - {fileID: 103884, guid: 30b9bbf7ad3e66645aefec82c4910abf, type: 3}
   - {fileID: 190680, guid: 3d8be4a11d6dd0e4480cc4f585a872cc, type: 3}
   - {fileID: 145594, guid: c5bd39d0186731447934fae602b23812, type: 3}
-  - {fileID: 145594, guid: 07ead753d3c99ba47b22268ddcf9689b, type: 3}
   - {fileID: 106350, guid: 3345ed56983066445beff60b286befcc, type: 3}
   - {fileID: 103884, guid: daec017ddafcf7a408b5c8352d07429e, type: 3}
   - {fileID: 173668, guid: 0128dcc2e587aad48b3edd3c0279175d, type: 3}
-  - {fileID: 145594, guid: 68784e61a93e88248a98cce81bb64223, type: 3}
-  spawnPoints:
-  - {fileID: 1474471015}
-  - {fileID: 1865096348}
-  - {fileID: 1863691612}
-  - {fileID: 916325736}
-  - {fileID: 98022605}
-  numberToSpawn: 5
+  spawnPoint: {fileID: 1474471015}
 --- !u!1 &2022037262
 GameObject:
   m_ObjectHideFlags: 0

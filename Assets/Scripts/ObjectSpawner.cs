@@ -1,44 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    public List<GameObject> spawnablePrefabs;
-    public Transform[] spawnPoints;
-    public int numberToSpawn = 5;
+    public List<GameObject> spawnablePrefabs; // Your spawnable objects
+    public Transform spawnPoint;              // Where the objects should spawn
 
-    private InputDevice rightHand;
-
-    void Start()
-    {
-        // Get the right-hand controller
-        var devices = new List<InputDevice>();
-        InputDevices.GetDevicesAtXRNode(XRNode.RightHand, devices);
-        if (devices.Count > 0)
-        {
-            rightHand = devices[0];
-        }
-    }
+    private bool canSpawn = true;
 
     void Update()
     {
-        // Check if A button is pressed (on right controller)
-        if (rightHand.isValid && rightHand.TryGetFeatureValue(CommonUsages.primaryButton, out bool aPressed) && aPressed)
+        if (Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame && canSpawn)
         {
-            SpawnRandomObjects();
+            SpawnRandomObject();
+        }
+
+        // Optional: add fallback for testing in editor
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && canSpawn)
+        {
+            SpawnRandomObject();
         }
     }
 
-    void SpawnRandomObjects()
+    void SpawnRandomObject()
     {
-        for (int i = 0; i < numberToSpawn; i++)
-        {
-            GameObject prefab = spawnablePrefabs[Random.Range(0, spawnablePrefabs.Count)];
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-        }
+        if (spawnablePrefabs.Count == 0) return;
+
+        int index = Random.Range(0, spawnablePrefabs.Count);
+        GameObject prefab = spawnablePrefabs[index];
+
+        Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+        canSpawn = false;
+
+        // Wait until button is released to allow next spawn
+        StartCoroutine(WaitForButtonRelease());
+    }
+
+    private System.Collections.IEnumerator WaitForButtonRelease()
+    {
+        yield return new WaitUntil(() =>
+            Gamepad.current == null || !Gamepad.current.buttonSouth.isPressed
+        );
+        canSpawn = true;
     }
 }
 
