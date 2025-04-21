@@ -46,34 +46,30 @@ public class ObjectCollision : MonoBehaviour
 
     void MergeObjects(ObjectCollision other)
     {
-        Vector3 spawnPos = (transform.position + other.transform.position) / 2f;
-
-        if (nextStageOptions != null && nextStageOptions.Count > 0)
+        // Make sure there's at least one next stage prefab
+        if (nextStageOptions.Count == 0)
         {
-            GameObject chosen = nextStageOptions[Random.Range(0, nextStageOptions.Count)];
-            GameObject result = Instantiate(chosen, spawnPos, Quaternion.identity);
-
-            ObjectCollision resultBehavior = result.GetComponent<ObjectCollision>();
-            if (resultBehavior != null)
-            {
-                if (resultBehavior.objectTag == ObjectTag.Destructible)
-                {
-                    Debug.Log("You merged into a destructible! Game over.");
-                    ExplodeAndEndGame();
-                    Destroy(result);
-                    return;
-                }
-                else if (resultBehavior.objectTag == ObjectTag.Mergible)
-                {
-                    Debug.Log($"🌱 Merged into stage {resultBehavior.mergeStage} successfully!");
-                    // Optional: add particle effect or animation here
-                }
-            }
+            Debug.LogWarning("No next stage options available!");
+            return;
         }
 
-        // Clean up the original merging objects
+        // Pick a random prefab for the next stage
+        GameObject nextPrefab = nextStageOptions[Random.Range(0, nextStageOptions.Count)];
+
+        // Find a good spawn position — average of both object positions
+        Vector3 spawnPosition = (transform.position + other.transform.position) / 2f;
+
+        // Optional: calculate average rotation or use Quaternion.identity
+        Quaternion spawnRotation = Quaternion.identity;
+
+        // Spawn the new merged object
+        GameObject newObject = Instantiate(nextPrefab, spawnPosition, spawnRotation);
+        Debug.Log($"Spawned {newObject.name} at {spawnPosition}");
+
+        // Destroy the original objects
         Destroy(gameObject);
         Destroy(other.gameObject);
-    }
+        }
+
 }
 
