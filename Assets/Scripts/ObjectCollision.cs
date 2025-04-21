@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
-public enum ObjectTag { Mergible, Destructible }
+public enum ObjectTag { Mergible, Destructible, Habitable, Unhabitable }
 
 public class ObjectCollision : MonoBehaviour
 {
     public ObjectTag objectTag;
     public int mergeStage = 0;
+    public MenuManager menuManager; 
 
     // A list of possible prefabs to spawn on a successful merge
     public List<GameObject> nextStageOptions;
@@ -64,12 +66,35 @@ public class ObjectCollision : MonoBehaviour
 
         // Spawn the new merged object
         GameObject newObject = Instantiate(nextPrefab, spawnPosition, spawnRotation);
+        
+        ObjectCollision newObjectCollision = newObject.GetComponent<ObjectCollision>();
+
+        if (newObjectCollision != null)
+        {
+            if (newObjectCollision.objectTag == ObjectTag.Habitable)
+            {
+                // Delay, then trigger win
+                StartCoroutine(TriggerSceneAfterDelay("GoodEnd"));
+            }
+            else if (newObjectCollision.objectTag == ObjectTag.Unhabitable)
+            {
+                // Delay, then trigger lose
+                StartCoroutine(TriggerSceneAfterDelay("BadEnd"));
+            }
+        }
+        
         Debug.Log($"Spawned {newObject.name} at {spawnPosition}");
 
         // Destroy the original objects
         Destroy(gameObject);
         Destroy(other.gameObject);
         }
+    
+    private IEnumerator TriggerSceneAfterDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(3f); // or your custom delay
+        SceneManager.LoadScene(sceneName);
+    }
 
 }
 
