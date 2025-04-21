@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
         public float delayTime = 3f;
+        public Animator fadeAnimator; 
   
         public void PlayGame()
         {
@@ -13,11 +14,13 @@ public class MenuManager : MonoBehaviour
 
         public void LoseGame()
         {
+            fadeAnimator.Play("fadetoblackmainscreen"); 
             StartCoroutine(LoadSceneWithDelay("BadEnd"));
         }
 
         public void WinGame()
         {
+            fadeAnimator.Play("fadetoblackmainscreen"); 
             StartCoroutine(LoadSceneWithDelay("GoodEnd"));
         }
 
@@ -28,4 +31,7 @@ public class MenuManager : MonoBehaviour
             yield return new WaitForSeconds(delayTime);
             SceneManager.LoadScene(sceneName);
         }
+        
+        
+      
     }
