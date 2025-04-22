@@ -990,6 +990,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4738866692564106130, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
+      propertyPath: objectTag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4738866692564106130, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
+      propertyPath: nextStageOptions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4738866692564106130, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
+      propertyPath: 'nextStageOptions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 106350, guid: 9a3cd3c4b8a191e45b33d65a17724c16, type: 3}
+    - target: {fileID: -4738866692564106130, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
+      propertyPath: 'nextStageOptions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 106350, guid: 3345ed56983066445beff60b286befcc, type: 3}
     - target: {fileID: -1519362620597693574, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -997,6 +1013,10 @@ PrefabInstance:
     - target: {fileID: 127356, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
       propertyPath: m_Name
       value: SG D
+      objectReference: {fileID: 0}
+    - target: {fileID: 127356, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
+      propertyPath: m_TagString
+      value: Mergible
       objectReference: {fileID: 0}
     - target: {fileID: 488912, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1268,6 +1288,10 @@ PrefabInstance:
     - target: {fileID: 145594, guid: c5bd39d0186731447934fae602b23812, type: 3}
       propertyPath: m_Name
       value: D Nebula
+      objectReference: {fileID: 0}
+    - target: {fileID: 145594, guid: c5bd39d0186731447934fae602b23812, type: 3}
+      propertyPath: m_TagString
+      value: Mergible
       objectReference: {fileID: 0}
     - target: {fileID: 431306, guid: c5bd39d0186731447934fae602b23812, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1681,7 +1705,6 @@ MonoBehaviour:
   - {fileID: 106350, guid: 9a3cd3c4b8a191e45b33d65a17724c16, type: 3}
   - {fileID: 103884, guid: 30b9bbf7ad3e66645aefec82c4910abf, type: 3}
   - {fileID: 190680, guid: 3d8be4a11d6dd0e4480cc4f585a872cc, type: 3}
-  - {fileID: 106350, guid: 3345ed56983066445beff60b286befcc, type: 3}
   - {fileID: 103884, guid: daec017ddafcf7a408b5c8352d07429e, type: 3}
   - {fileID: 173668, guid: 0128dcc2e587aad48b3edd3c0279175d, type: 3}
   spawnPoints:
