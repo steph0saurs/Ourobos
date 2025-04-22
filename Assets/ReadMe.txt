@@ -10,7 +10,7 @@ What if you had the chance to create life? What if you were more than just part 
 
 Instructions:
 
-A person will enter the door after reading the sign. Upon entrance a camera will pick up the person and project their distorted image on the wall, the user will then be able to interact with the projections. 
+A person will enter the door after reading the sign. Upon entrance a camera will pick up the person and project their distorted image on the wall, the user will then be able to interact with the projections. Once in the headset, the user will be in the start scene. The user can use the A button to have objects appear in the scene and use the trigger button to grab objects. 
 
 Attributes:
 
