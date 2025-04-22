@@ -79,7 +79,7 @@ public class ObjectCollision : MonoBehaviour
             else if (newObjectCollision.objectTag == ObjectTag.Unhabitable)
             {
                 // Delay, then trigger lose
-                StartCoroutine(TriggerSceneAfterDelay("BadEnd"));
+                StartCoroutine(TriggerSceneAfterDelay("chickenjockey"));
             }
         }
         
