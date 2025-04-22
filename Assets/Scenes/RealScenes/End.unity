@@ -511,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1215344419}
-  - component: {fileID: 1215344418}
+  - component: {fileID: 1215344420}
   m_Layer: 0
   m_Name: TImer
   m_TagString: Untagged
@@ -519,20 +519,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1215344418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215344417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 270e512bf35c75b4aadf13dd342b5003, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 20
-  sceneToLoad: StartGame
 --- !u!4 &1215344419
 Transform:
   m_ObjectHideFlags: 0
@@ -548,6 +534,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1215344420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215344417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2eef0dfad0f8524398489d3213deb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeLoading: 10
+  sceneNameToLoad: StartGame
+  timeElapsed: 0
 --- !u!1001 &1392912984
 PrefabInstance:
   m_ObjectHideFlags: 0
