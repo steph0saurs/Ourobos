@@ -106,7 +106,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: 1
   mergeStage: 0
+  menuManager: {fileID: 0}
   nextStageOptions: []
 --- !u!114 &682739070832195095
 MonoBehaviour:
@@ -291,4 +292,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: 1
   mergeStage: 0
+  menuManager: {fileID: 0}
   nextStageOptions: []

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: 0
-  mergeStage: 5
+  mergeStage: 4
   menuManager: {fileID: 0}
   nextStageOptions:
   - {fileID: 181524, guid: 4c1ebca85eb183f4380b6604336b8fee, type: 3}
@@ -123,7 +123,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
