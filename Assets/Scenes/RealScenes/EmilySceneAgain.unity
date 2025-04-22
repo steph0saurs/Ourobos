@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270e512bf35c75b4aadf13dd342b5003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 30
+  delay: 90
   sceneToLoad: End
 --- !u!4 &1030334428
 Transform:
