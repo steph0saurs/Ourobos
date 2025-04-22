@@ -45,7 +45,6 @@ public class ObjectCollision : MonoBehaviour
 
     void ExplodeAndEndGame()
     {
-        
         Destroy(gameObject);
     }
 
@@ -65,17 +64,17 @@ public class ObjectCollision : MonoBehaviour
 
         ObjectCollision newObjectCollision = newObject.GetComponent<ObjectCollision>();
 
-        if (newObjectCollision != null && newObjectCollision.isFinalStage)
-        {
-            if (newObjectCollision.objectTag == ObjectTag.Habitable)
-            {
-                menuManager.WinGame();
-            }
-            else if (newObjectCollision.objectTag == ObjectTag.Unhabitable)
-            {
-                menuManager.LoseGame();
-            }
-        }
+       // if (newObjectCollision != null && newObjectCollision.isFinalStage)
+      //  {
+           // if (newObjectCollision.objectTag == ObjectTag.Habitable)
+         //   {
+                //menuManager.WinGame();
+          //  }
+          //  else if (newObjectCollision.objectTag == ObjectTag.Unhabitable)
+           // {
+            //    menuManager.LoseGame();
+         //   }
+       // }
 
         Debug.Log($"Spawned {newObject.name} at {spawnPosition}");
 
