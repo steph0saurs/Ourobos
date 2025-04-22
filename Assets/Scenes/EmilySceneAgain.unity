@@ -990,6 +990,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1519362620597693574, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 127356, guid: 7e8e0436051c72041956483b7f73bf2a, type: 3}
       propertyPath: m_Name
       value: SG D

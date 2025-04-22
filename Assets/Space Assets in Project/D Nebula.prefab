@@ -4840,7 +4840,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -5008,8 +5008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67af4cee87bd5a4681eb349eda5cd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectTag: 0
+  objectTag: 1
   mergeStage: 2
-  nextStageOptions:
-  - {fileID: 145594, guid: 07ead753d3c99ba47b22268ddcf9689b, type: 3}
-  - {fileID: 145594, guid: 68784e61a93e88248a98cce81bb64223, type: 3}
+  menuManager: {fileID: 0}
+  nextStageOptions: []
