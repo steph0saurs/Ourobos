@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class SceneTimer : MonoBehaviour
 {
     public float delay = 5f; 
-    public string sceneToLoad = "NextSceneName"; 
+    public string scene1 = "Scene1Name"; // First scene option
+    public string scene2 = "Scene2Name"; // Second scene option
 
     void Start()
     {
-        Invoke("LoadNextScene", delay);
+        Invoke("LoadRandomScene", delay);
     }
 
-    void LoadNextScene()
+    void LoadRandomScene()
     {
+        
+        string sceneToLoad = Random.Range(0, 2) == 0 ? scene1 : scene2;
         SceneManager.LoadScene(sceneToLoad);
     }
 }
