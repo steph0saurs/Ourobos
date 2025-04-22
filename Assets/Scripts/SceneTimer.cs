@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class SceneTimer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float delay = 5f; 
+    public string sceneToLoad = "NextSceneName"; 
+
     void Start()
     {
-        
+        Invoke("LoadNextScene", delay);
     }
 
-    // Update is called once per frame
-    void Update()
+    void LoadNextScene()
     {
-        
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
+

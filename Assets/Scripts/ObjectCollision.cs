@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
-public enum ObjectTag { Mergible, Destructible, Habitable, Unhabitable }
+using System.Collections.Generic;
 
 public class ObjectCollision : MonoBehaviour
 {
+    public enum ObjectTag { Mergible, Destructible, Habitable, Unhabitable }
     public ObjectTag objectTag;
     public int mergeStage = 0;
     public MenuManager menuManager;
-
-    // A list of possible prefabs to spawn on a successful merge
     public List<GameObject> nextStageOptions;
+    public string sceneToLoadOnExplode = "chickenjockey"; 
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -41,7 +39,16 @@ public class ObjectCollision : MonoBehaviour
 
     void ExplodeAndEndGame()
     {
-        SceneManager.LoadScene("chickenjockey");
+        // Load custom scene if defined
+        if (!string.IsNullOrEmpty(sceneToLoadOnExplode))
+        {
+            SceneManager.LoadScene(sceneToLoadOnExplode);
+        }
+        else
+        {
+            SceneManager.LoadScene("chickenjockey"); // fallback
+        }
+
         Destroy(gameObject);
     }
 
@@ -77,7 +84,6 @@ public class ObjectCollision : MonoBehaviour
 
         Destroy(gameObject);
         Destroy(other.gameObject);
-
     }
 }
 
