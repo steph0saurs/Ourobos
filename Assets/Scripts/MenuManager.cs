@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-        public float delayTime = 3f;
+        public float delayTime = 5f;
         public Animator fadeAnimator; 
   
         public void PlayGame()
@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour
 
  
 
-        private IEnumerator LoadSceneWithDelay(string sceneName)
+        public IEnumerator LoadSceneWithDelay(string sceneName)
         {
             yield return new WaitForSeconds(delayTime);
             SceneManager.LoadScene(sceneName);

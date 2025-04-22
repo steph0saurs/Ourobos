@@ -46,7 +46,7 @@ public class ObjectCollision : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("chickenjockey"); // fallback
+            menuManager.LoseGame();
         }
 
         Destroy(gameObject);
@@ -73,12 +73,13 @@ public class ObjectCollision : MonoBehaviour
             if (newObjectCollision.objectTag == ObjectTag.Habitable)
             {
                 Debug.Log("Habitable planet created. You win!");
-                SceneManager.LoadScene("GoodEnd");
+                
+                menuManager.WinGame();
             }
             else if (newObjectCollision.objectTag == ObjectTag.Unhabitable)
             {
                 Debug.Log("Unhabitable planet created. You lose!");
-                SceneManager.LoadScene("chickenjockey");
+                menuManager.LoseGame();
             }
         }
 
