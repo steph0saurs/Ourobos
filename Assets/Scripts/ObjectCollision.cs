@@ -18,7 +18,6 @@ public class ObjectCollision : MonoBehaviour
     public int mergeStage = 0;
     public MenuManager menuManager;
     public List<GameObject> nextStageOptions;
-    public string sceneToLoadOnExplode = "chickenjockey";
     public bool isFinalStage = false;
 
     private void OnCollisionEnter(Collision collision)
