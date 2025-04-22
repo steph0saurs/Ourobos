@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
         public void LoseGame()
         {
             fadeAnimator.Play("fadetoblackmainscreen"); 
-            StartCoroutine(LoadSceneWithDelay("chickenjockey"));
+            StartCoroutine(LoadSceneWithDelay("End"));
         }
 
         public void WinGame()
