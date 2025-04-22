@@ -6,12 +6,20 @@ using System.Collections.Generic;
 
 public class ObjectCollision : MonoBehaviour
 {
-    public enum ObjectTag { Mergible, Destructible, Habitable, Unhabitable }
+    public enum ObjectTag
+    {
+        Mergible,
+        Destructible,
+        Habitable,
+        Unhabitable
+    }
+
     public ObjectTag objectTag;
     public int mergeStage = 0;
     public MenuManager menuManager;
     public List<GameObject> nextStageOptions;
-    public string sceneToLoadOnExplode = "chickenjockey"; 
+    public string sceneToLoadOnExplode = "chickenjockey";
+    public bool isFinalStage = false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,7 +31,6 @@ public class ObjectCollision : MonoBehaviour
         if ((objectTag == ObjectTag.Destructible && other.objectTag == ObjectTag.Destructible) ||
             (objectTag != other.objectTag)) // one is mergible, the other is destructible
         {
-            ExplodeAndEndGame();
             Destroy(other.gameObject);
             return;
         }
@@ -39,16 +46,7 @@ public class ObjectCollision : MonoBehaviour
 
     void ExplodeAndEndGame()
     {
-        // Load custom scene if defined
-        if (!string.IsNullOrEmpty(sceneToLoadOnExplode))
-        {
-            SceneManager.LoadScene(sceneToLoadOnExplode);
-        }
-        else
-        {
-            menuManager.LoseGame();
-        }
-
+        
         Destroy(gameObject);
     }
 
@@ -68,20 +66,19 @@ public class ObjectCollision : MonoBehaviour
 
         ObjectCollision newObjectCollision = newObject.GetComponent<ObjectCollision>();
 
-        if (newObjectCollision != null)
+        if (newObjectCollision != null && newObjectCollision.isFinalStage)
         {
             if (newObjectCollision.objectTag == ObjectTag.Habitable)
             {
-                Debug.Log("Habitable planet created. You win!");
-                
                 menuManager.WinGame();
             }
             else if (newObjectCollision.objectTag == ObjectTag.Unhabitable)
             {
-                Debug.Log("Unhabitable planet created. You lose!");
                 menuManager.LoseGame();
             }
         }
+
+        Debug.Log($"Spawned {newObject.name} at {spawnPosition}");
 
         Destroy(gameObject);
         Destroy(other.gameObject);
